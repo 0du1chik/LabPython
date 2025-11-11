@@ -16,3 +16,21 @@ plt.title('Children out of school, primary, 2005-2019 years, total', fontsize=15
 plt.ylabel('Indicator', fontsize=12, color='red')
 plt.grid(True)
 plt.show()
+
+country_input = input("Введіть назву країни (Ukraine або Germany): ").strip()
+if country_input.lower() == "ukraine":
+    values = z
+    color = 'blue'
+elif country_input.lower() == "germany":
+    values = y
+    color = 'red'
+else:
+    print("Такої країни немає у даних!")
+    exit()
+plt.figure(figsize=(12,6))
+plt.bar(x, values, color=color)
+plt.title(f'Children out of school, primary ({country_input}, 2005-2019)', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Number of children', fontsize=12)
+plt.grid(axis='y')
+plt.show()
